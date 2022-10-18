@@ -1,0 +1,29 @@
+{
+  "name": "flowro.me",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Romeo Nupieri <romeonupieri@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently \"yarn start:client\" \"yarn start:server\"",
+    "start:dev": "concurrently \"yarn start:client:dev\" \"yarn start:server:dev\"",
+    "start:prod": "concurrently \"yarn start:client:prod\" \"yarn start:server:prod\"",
+    "start:client": "cd apps/client && ENV=local npm run dev",
+    "start:server": "ENV=local python3 apps/server/app.py",
+    "start:client:dev": "cd apps/client && npm run build && ENV=development npm start",
+    "start:server:dev": "cd apps/server && gunicorn --bind=0.0.0.0:3001 wsgi:app",
+    "start:client:prod": "cd apps/client && npm run build && ENV=production npm start",
+    "start:server:prod": "cd apps/server && gunicorn --bind=0.0.0.0:3003 wsgi:app",
+    "init": "concurrently \"yarn init:client\" \"yarn init:server\"",
+    "init:client": "cd apps/client && npm i",
+    "init:server": "python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt"
+  },
+  "devDependencies": {
+    "concurrently": "^7.4.0",
+    "dotenv": "^16.0.3",
+    "dotenv-cli": "^6.0.0"
+  },
+  "dependencies": {
+    "sass": "^1.55.0"
+  }
+}
