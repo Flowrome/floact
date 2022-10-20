@@ -1,5 +1,7 @@
 import "./home.module.scss";
-import type { NextPage } from "next";
+import type { NextPageWithLayout } from "@app";
+import BasePageLayout from "@layouts/BasePage";
+import { ReactElement } from "react";
 
 interface HomeInterface {
   data: { [key: string]: any };
@@ -16,9 +18,16 @@ export const getServerSideProps = async () => {
   };
 };
 
-const Home: NextPage<HomeInterface> = ({data}) => {
-  console.log(data)
-  return <>HELLO WORLD</>;
+const Home: NextPageWithLayout<HomeInterface> = () => {
+  return (
+    <>
+      <>HELLO WORLD</>
+    </>
+  );
+};
+
+Home.getLayout = function getLayout(page: ReactElement) {
+  return <BasePageLayout>{page}</BasePageLayout>;
 };
 
 export default Home;

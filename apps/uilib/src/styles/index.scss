@@ -1,0 +1,62 @@
+:root {
+  --flowrome-theme-color: #ffffff;
+
+  --flowrome-background-color: #ffffff;
+  --flowrome-background-color-rgb: 255, 255, 255;
+
+  --flowrome-text-color: #010203;
+  --flowrome-text-color-rgb: 1, 2, 3;
+
+  --flowrome-color-step-50: #f2f2f2;
+  --flowrome-color-step-100: #e6e6e6;
+  --flowrome-color-step-150: #d9d9d9;
+  --flowrome-color-step-200: #cccccc;
+  --flowrome-color-step-250: #bfbfbf;
+  --flowrome-color-step-300: #b3b3b3;
+  --flowrome-color-step-350: #a6a6a6;
+  --flowrome-color-step-400: #999999;
+  --flowrome-color-step-450: #8c8c8c;
+  --flowrome-color-step-500: #808080;
+  --flowrome-color-step-550: #737373;
+  --flowrome-color-step-600: #666666;
+  --flowrome-color-step-650: #595959;
+  --flowrome-color-step-700: #4d4d4d;
+  --flowrome-color-step-750: #404040;
+  --flowrome-color-step-800: #333333;
+  --flowrome-color-step-850: #262626;
+  --flowrome-color-step-900: #191919;
+  --flowrome-color-step-950: #0d0d0d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --flowrome-theme-color: #010203;
+
+    --flowrome-background-color: #010203;
+    --flowrome-background-color-rgb: 1, 2, 3;
+
+    --flowrome-text-color: #ffffff;
+    --flowrome-text-color-rgb: 255, 255, 255;
+
+    --flowrome-color-step-950: #f2f2f2;
+    --flowrome-color-step-900: #e6e6e6;
+    --flowrome-color-step-850: #d9d9d9;
+    --flowrome-color-step-800: #cccccc;
+    --flowrome-color-step-750: #bfbfbf;
+    --flowrome-color-step-700: #b3b3b3;
+    --flowrome-color-step-650: #a6a6a6;
+    --flowrome-color-step-600: #999999;
+    --flowrome-color-step-550: #8c8c8c;
+    --flowrome-color-step-500: #808080;
+    --flowrome-color-step-450: #737373;
+    --flowrome-color-step-400: #666666;
+    --flowrome-color-step-350: #595959;
+    --flowrome-color-step-300: #4d4d4d;
+    --flowrome-color-step-250: #404040;
+    --flowrome-color-step-200: #333333;
+    --flowrome-color-step-150: #262626;
+    --flowrome-color-step-100: #191919;
+    --flowrome-color-step-50: #0d0d0d;
+  }
+}
