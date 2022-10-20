@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import Blueprint
 from flask_cors import cross_origin
 
@@ -10,5 +9,5 @@ home_api = Blueprint("home", __name__)
 @home_api.route("/", methods=["GET"])
 @cross_origin()
 def home():
-    response = Response(200, {"home": "ciao"}).read()
+    response = Response(200, {"helloWorld": "Hello i'm the response data from flask FLOACT server"}).read()
     return response
