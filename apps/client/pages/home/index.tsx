@@ -9,7 +9,7 @@ interface HomeInterface {
 
 export const getServerSideProps = async () => {
   const { data } = await fetch(
-    `${process.env.FLOWROME_CLIENT_BASE_URL}/home`
+    `${process.env.FLOACT_CLIENT_BASE_URL}/home`
   ).then((res) => res.json());
   return {
     props: {

@@ -16,7 +16,7 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@flowrome-uilib": ["components/stencil-generated/index.ts"],
+      "@floact-uilib": ["components/stencil-generated/index.ts"],
       "@app": ["pages/_app.tsx"],
       "@components/*": ["components/*"],
       "@layouts/*": ["layouts/*"]

@@ -12,6 +12,6 @@ load_dotenv(dotenv_path=abspath(f"{apix_path}/envs/.env.{env}"))
 
 if __name__ == "__main__":
     app.run(
-        host=environ.get("FLOWROME_SERVER_FLASK_HOST"),
-        port=int(environ.get("FLOWROME_SERVER_FLASK_PORT")),
+        host=environ.get("FLOACT_SERVER_FLASK_HOST"),
+        port=int(environ.get("FLOACT_SERVER_FLASK_PORT")),
     )

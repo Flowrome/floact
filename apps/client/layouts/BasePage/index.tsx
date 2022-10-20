@@ -11,7 +11,7 @@ const BasePageLayout = ({ children }: BasePageLayoutType) => {
   useEffect(() => {
     setThemeColor(
       getComputedStyle(document.documentElement).getPropertyValue(
-        "--flowrome-theme-color"
+        "--floact-theme-color"
       )
     );
   }, []);
@@ -19,7 +19,7 @@ const BasePageLayout = ({ children }: BasePageLayoutType) => {
   return (
     <>
       <Head>
-        <title>{process.env.FLOWROME_CLIENT_NAME}</title>
+        <title>{process.env.FLOACT_CLIENT_NAME}</title>
         <meta
           name="theme-color"
           media="(prefers-color-scheme: light)"

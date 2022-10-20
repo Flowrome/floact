@@ -5,7 +5,7 @@ require('dotenv').config({
 const {writeFileSync} = require('fs')
 
 envPlugin = () => {
-  const toSearch = 'FLOWROME_UILIB_';
+  const toSearch = 'FLOACT_UILIB_';
   const uiEnvVarsKeys = Object.keys(process.env).filter(key => key.indexOf(toSearch) > -1);
   const toWrite = {};
   uiEnvVarsKeys.forEach(key => {

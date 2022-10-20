@@ -28,6 +28,6 @@ app.register_blueprint(api, url_prefix="/api")
 app.register_blueprint(home_api, url_prefix="/api/home")
 if environ.get("ENV") != "production":
     app.run(
-        host=environ.get("FLOWROME_SERVER_FLASK_HOST"),
-        port=int(environ.get("FLOWROME_SERVER_FLASK_PORT")),
+        host=environ.get("FLOACT_SERVER_FLASK_HOST"),
+        port=int(environ.get("FLOACT_SERVER_FLASK_PORT")),
     )
