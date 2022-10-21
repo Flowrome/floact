@@ -56,3 +56,6 @@ The UI library is optional so you can keep it or remove it according the project
 - The UI library is written using **Web Components** using **StencilJS** 
 - All the **css variables** that define the global theme should be written inside the UI library
 - If you choose to remove the UI library please remove all the references inside the **client** app
+    - remove `apps/uilib` folder
+    - remove all scripts that end with `:ui` in the package.json of the project (also the references inside other scripts)
+    - remove inside `apps/client` the references of the **uilib** app
