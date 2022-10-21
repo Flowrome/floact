@@ -10,11 +10,6 @@
     autoprefixer "^10.3.6"
     postcss "~8.3.8"
 
-"@stencil/core@^2.13.0":
-  version "2.18.1"
-  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.18.1.tgz#f45e99b7abe2a0fa90d3141363601a68df5c08a7"
-  integrity sha512-/fXkh1lwZ+X9JQCw50mPjhBogzEHOBvVC5pLoDLZqodVYK0DGWILM2YLV4dcIUBNEK8/HMDpO/Rq81/rS3mNOw==
-
 "@stencil/react-output-target@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@stencil/react-output-target/-/react-output-target-0.3.1.tgz#dc9cc2fea32d0e30474a87fcb2a447f90ab78696"
@@ -442,11 +437,6 @@ tslib@^2.1.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
-
-"uilib@file:./apps/uilib":
-  version "0.0.1"
-  dependencies:
-    "@stencil/core" "^2.13.0"
 
 update-browserslist-db@^1.0.9:
   version "1.0.10"
