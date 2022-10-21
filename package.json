@@ -37,5 +37,7 @@
     "dotenv-cli": "^6.0.0",
     "sass": "^1.55.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "uilib": "file:./apps/uilib"
+  }
 }
