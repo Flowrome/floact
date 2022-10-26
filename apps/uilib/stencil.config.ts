@@ -4,6 +4,9 @@ import { sass } from '@stencil/sass';
 import { postcss } from '@stencil-community/postcss';
 import autoprefixer from 'autoprefixer';
 import { reactOutputTarget as react } from '@stencil/react-output-target';
+import { readFileSync } from 'fs';
+
+const customComponentReadmeFooter = readFileSync('docs/custom-component-readme-footer.md', 'utf-8');
 
 export const config: Config = {
   namespace: 'uilib',
@@ -23,6 +26,7 @@ export const config: Config = {
     },
     {
       type: 'docs-readme',
+      footer: customComponentReadmeFooter,
     },
     {
       type: 'www',

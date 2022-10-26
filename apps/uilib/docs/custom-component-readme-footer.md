@@ -1,19 +1,3 @@
-# hello-world
-
-
-
-<!-- Auto Generated Below -->
-
-
-## Properties
-
-| Property        | Attribute         | Description | Type     | Default |
-| --------------- | ----------------- | ----------- | -------- | ------- |
-| `apiTestString` | `api-test-string` |             | `string` | `null`  |
-
-
-----------------------------------------------
-
 **Built with Floact + Stencil**
 
 ## Notes:
@@ -34,4 +18,3 @@ So and example component could be:
   ```TSX
   <NameOfWebComponent propertyName={'test-value'}></NameOfWebComponent>
   ```
-
