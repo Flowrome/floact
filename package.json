@@ -14,8 +14,9 @@
     "start:server:dev": "cd apps/server && ENV=development gunicorn --bind=0.0.0.0:3001 wsgi:app",
     "start:client:prod": "rm -rf apps/client/.next && cd apps/client && yarn run build && ENV=production yarn start",
     "start:server:prod": "cd apps/server && ENV=production gunicorn --bind=0.0.0.0:3003 wsgi:app",
-    "storybook": "cd apps/uilib && yarn run start:storybook",
+    "storybook": "cd apps/uilib && ENV=local yarn run start:storybook",
     "storybook:dev": "cd apps/uilib && ENV=development yarn run start:storybook",
+    "storybook:prod": "cd apps/uilib && ENV=production yarn run start:storybook",
     "build": "concurrently -n \"client\" -c \"#CC5A71\" \"yarn build:client\"",
     "build:client": "yarn build:ui && rm -rf apps/client/.next && cd apps/client && yarn run build",
     "build:ui": "cd apps/uilib && yarn run build",
@@ -38,7 +39,5 @@
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0"
   },
-  "dependencies": {
-    "uilib": "file:./apps/uilib"
-  }
+  "dependencies": {}
 }

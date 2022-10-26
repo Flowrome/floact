@@ -77,7 +77,8 @@ This library is a monorepo template to create web-app application using this sta
 - Write the following scripts inside the `package.json` in the project root folder:
   - `"start:[ENVIRONMENT_NAME]":"concurrently -n \"uilib,client,server\" -c \"#22AAA1,#CC5A71,#3F84E5\" \"yarn build:ui:watch\" \"yarn start:client:[ENVIRONMENT_NAME]\" \"yarn start:server:[ENVIRONMENT_NAME]\""` will start all the apps using [concurrently](https://www.npmjs.com/package/concurrently)
   - `"start:client:[ENVIRONMENT_NAME]": "rm -rf apps/client/.next && npm run build && ENV=[ENVIRONMENT_NAME] npm start"` will start the **client** app using the environment you want
-  - `"start:server:[ENVIRONMENT_NAME]": "cd apps/server && ENV=[ENVIRONMENT_NAME] gunicorn --bind=0.0.0.0:3001 wsgi:app" `will start the **server** app using the environment you want
+  - `"start:server:[ENVIRONMENT_NAME]": "cd apps/server && ENV=[ENVIRONMENT_NAME] gunicorn --bind=0.0.0.0:3001 wsgi:app"`will start the **server** app using the environment you want
+  - `"storybook:[ENVIRONMENT_NAME]": "cd apps/uilib && ENV=[ENVIRONMENT_NAME] yarn run start:storybook`will start the **server** app using the environment you want
 - Run `yarn start:[ENVIRONMENT_NAME]` to launch all the apps
 - **SIDE NOTES**:
   - Please try to mantain all the environemnt variables available in each environment
