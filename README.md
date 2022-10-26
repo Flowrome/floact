@@ -24,6 +24,8 @@ This library is a monorepo template to create web-app application using this sta
 
 # Sections
 
+- [Introduction](#introduction)
+- [Sections](#sections)
 - [Requirements](#requirements)
 - [Get started](#get-started)
 - [How to start local environment](#how-to-start-local-environment)
@@ -109,7 +111,7 @@ The **server** app is using Flask and Python3 as core libraries
 - It is served with `flask run` in local environment
 - It is server using **[wsgi](https://flask.palletsprojects.com/en/2.2.x/deploying/)** and **[gunicorn](https://gunicorn.org/)** in any other environment
 
-You can check the file `apps/server/apis/home.py` for a `hello world` example on how this works, the api will be requested by `apps/client/pages/home` page and inserted inside the `apps/uilib/src/components/hello-world` component as a props
+You can check the file `apps/server/apis/home.py` for a `hello world` example on how this works, the api will be requested by `apps/client/pages/home` page and inserted inside the `apps/uilib/src/components/doc` component as a props
 
 Here's the example (Only visible in localhost):
 

@@ -1,11 +1,11 @@
 import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'hello-world',
-  styleUrl: 'hello-world.scss',
+  tag: 'doc-readme',
+  styleUrl: 'doc-readme.scss',
   shadow: true,
 })
-export class HelloWorld {
+export class DocReadme {
   @Prop() apiTestString: string = null;
 
   render() {
@@ -48,7 +48,6 @@ export class HelloWorld {
               </g>
             </svg>
           </a>
-
           <h1 id="introduction">Introduction</h1>
           <p>This library is a monorepo template to create web-app application using this stack</p>
           <ul>
@@ -73,6 +72,12 @@ export class HelloWorld {
           </ul>
           <h1 id="sections">Sections</h1>
           <ul>
+            <li>
+              <a href="#introduction">Introduction</a>
+            </li>
+            <li>
+              <a href="#sections">Sections</a>
+            </li>
             <li>
               <a href="#requirements">Requirements</a>
             </li>
@@ -99,7 +104,6 @@ export class HelloWorld {
             </li>
           </ul>
           <div id="requirements"></div>
-
           <h1 id="requirements">Requirements</h1>
           <ul>
             <li>
@@ -110,7 +114,6 @@ export class HelloWorld {
             </li>
           </ul>
           <div id="get-started"></div>
-
           <h1 id="get-started">Get started</h1>
           <ul>
             <li>
@@ -128,11 +131,10 @@ export class HelloWorld {
               </ul>
             </li>
             <li>
-              Run <code>npm init</code> in the project root folder to install all the dependencies needed
+              Run <code>npm run init</code> in the project root folder to install all the dependencies needed
             </li>
           </ul>
           <div id="how-to-start-local-environemt"></div>
-
           <h1 id="how-to-start-local-environment">How to start local environment</h1>
           <ul>
             <li>
@@ -151,7 +153,6 @@ export class HelloWorld {
             </li>
           </ul>
           <div id="how-to-build-the-web-app-for-production"></div>
-
           <h1 id="how-to-build-the-web-app-for-production">How to build the web app for production</h1>
           <ul>
             <li>
@@ -167,7 +168,6 @@ export class HelloWorld {
             </li>
           </ul>
           <div id="how-to-use-environments"></div>
-
           <h1 id="how-to-use-environments">How to use environments</h1>
           <ul>
             <li>
@@ -178,25 +178,20 @@ export class HelloWorld {
               <ul>
                 <li>
                   <code>
-                    &quot;start:[ENVIRONMENT_NAME]&quot;:&quot;concurrently -n client,server -c #CC5A71,#3F84E5 \&quot;yarn start:client:[ENVIRONMENT_NAME]\&quot; \&quot;yarn
-                    start:server:[ENVIRONMENT_NAME]\&quot;&quot;
+                    &quot;start:[ENVIRONMENT_NAME]&quot;:&quot;concurrently -n \&quot;uilib,client,server\&quot; -c \&quot;#22AAA1,#CC5A71,#3F84E5\&quot; \&quot;yarn
+                    build:ui:watch\&quot; \&quot;yarn start:client:[ENVIRONMENT_NAME]\&quot; \&quot;yarn start:server:[ENVIRONMENT_NAME]\&quot;&quot;
                   </code>{' '}
                   will start all the apps using <a href="https://www.npmjs.com/package/concurrently">concurrently</a>
                 </li>
                 <li>
                   <code>
-                    &quot;start:client:[ENVIRONMENT_NAME]&quot;: &quot;rm -rf apps/client/.next &amp;&amp; yarn build:ui &amp;&amp; cd apps/client &amp;&amp; npm run build
-                    &amp;&amp; ENV=[ENVIRONMENT_NAME] npm start&quot;
+                    &quot;start:client:[ENVIRONMENT_NAME]&quot;: &quot;rm -rf apps/client/.next &amp;&amp; npm run build &amp;&amp; ENV=[ENVIRONMENT_NAME] npm start&quot;
                   </code>{' '}
                   will start the <strong>client</strong> app using the environment you want
                 </li>
                 <li>
                   <code>&quot;start:server:[ENVIRONMENT_NAME]&quot;: &quot;cd apps/server &amp;&amp; ENV=[ENVIRONMENT_NAME] gunicorn --bind=0.0.0.0:3001 wsgi:app&quot; </code>will
                   start the <strong>server</strong> app using the environment you want
-                </li>
-                <li>
-                  <code>&quot;start:ui:[ENVIRONMENT_NAME]&quot;: &quot;cd apps/uilib &amp;&amp; ENV=[ENVIRONMENT_NAME] npm run start&quot;,</code> will start the{' '}
-                  <strong>ui</strong> app using the environment you want
                 </li>
               </ul>
             </li>
@@ -212,13 +207,11 @@ export class HelloWorld {
             </li>
           </ul>
           <div id="external-libraries"></div>
-
           <h1 id="external-libraries">External libraries</h1>
           <p>
             It is a monorepo so you can keep the libraries in the root project (you can use <strong>yarn</strong> or <strong>npm</strong> as you prefer)
           </p>
           <div id="ui-library"></div>
-
           <h1 id="ui-library">UI library</h1>
           <p>The UI library is optional so you can keep it or remove it according the project requirements, here are some hints:</p>
           <ul>
@@ -235,7 +228,7 @@ export class HelloWorld {
                   remove <code>apps/uilib</code> folder
                 </li>
                 <li>
-                  remove all scripts that end with <code>:ui</code> in the package.json of the project (also the references inside other scripts)
+                  remove all scripts that end with <code>:ui</code> and <code>:ui:*</code> in the package.json of the project (also the references inside other scripts)
                 </li>
                 <li>
                   remove inside <code>apps/client</code> of <code>@floact/uilib</code>
@@ -244,7 +237,6 @@ export class HelloWorld {
             </li>
           </ul>
           <div id="server"></div>
-
           <h1 id="server">Server</h1>
           <p>
             The <strong>server</strong> app is using Flask and Python3 as core libraries
@@ -267,9 +259,9 @@ export class HelloWorld {
           </ul>
           <p>
             You can check the file <code>apps/server/apis/home.py</code> for a <code>hello world</code> example on how this works, the api will be requested by{' '}
-            <code>apps/client/pages/home</code> page and inserted inside the <code>apps/uilib/src/components/hello-world</code> component as a props
+            <code>apps/client/pages/home</code> page and inserted inside the <code>apps/uilib/src/components/doc</code> component as a props
           </p>
-          <p>Here&#39;s the example (Only visible in localhost):</p>
+          <p>Here's the example (Only visible in localhost):</p>
           <p>
             <strong>
               <a href="http://localhost:3001/api/home/">{this.apiTestString}</a>
