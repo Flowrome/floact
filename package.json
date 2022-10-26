@@ -22,7 +22,7 @@
     "build:ui": "cd apps/uilib && npm run build && cd ../.. && yarn remove uilib && yarn add file:./apps/uilib",
     "init": "yarn && concurrently -n \"client,server,uilib\" -c \"#CC5A71,#3F84E5,#22AAA1\" \"yarn init:client\" \"yarn init:server\" \"yarn init:ui\"",
     "init:client": "cd apps/client && yarn",
-    "init:ui": "cd apps/uilib && yarn",
+    "init:ui": "cd apps/uilib && yarn && yarn link && cd ../.. && yarn link uilib",
     "init:server": "python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt"
   },
   "devDependencies": {
