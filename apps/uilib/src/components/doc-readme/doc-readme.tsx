@@ -1,4 +1,5 @@
 import { Component, Host, h, Prop } from '@stencil/core';
+import { env } from '@env';
 
 @Component({
   tag: 'doc-readme',
@@ -9,6 +10,7 @@ export class DocReadme {
   @Prop() apiTestString: string = null;
 
   render() {
+    console.log(env);
     return (
       <Host>
         <article class={'markdown-body'}>
