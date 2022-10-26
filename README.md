@@ -73,10 +73,9 @@ This library is a monorepo template to create web-app application using this sta
 
 - Create the file `envs/.env.[ENVIRONMENT_NAME]`
 - Write the following scripts inside the `package.json` in the project root folder:
-  - `"start:[ENVIRONMENT_NAME]":"concurrently -n client,server -c #CC5A71,#3F84E5 \"yarn start:client:[ENVIRONMENT_NAME]\" \"yarn start:server:[ENVIRONMENT_NAME]\""` will start all the apps using [concurrently](https://www.npmjs.com/package/concurrently)
-  - `"start:client:[ENVIRONMENT_NAME]": "rm -rf apps/client/.next && yarn build:ui && cd apps/client && npm run build && ENV=[ENVIRONMENT_NAME] npm start"` will start the **client** app using the environment you want
+  - `"start:[ENVIRONMENT_NAME]":"concurrently -n \"uilib,client,server\" -c \"#22AAA1,#CC5A71,#3F84E5\" \"yarn build:ui:watch\" \"yarn start:client:[ENVIRONMENT_NAME]\" \"yarn start:server:[ENVIRONMENT_NAME]\""` will start all the apps using [concurrently](https://www.npmjs.com/package/concurrently)
+  - `"start:client:[ENVIRONMENT_NAME]": "rm -rf apps/client/.next && npm run build && ENV=[ENVIRONMENT_NAME] npm start"` will start the **client** app using the environment you want
   - `"start:server:[ENVIRONMENT_NAME]": "cd apps/server && ENV=[ENVIRONMENT_NAME] gunicorn --bind=0.0.0.0:3001 wsgi:app" `will start the **server** app using the environment you want
-  - `"start:ui:[ENVIRONMENT_NAME]": "cd apps/uilib && ENV=[ENVIRONMENT_NAME] npm run start",` will start the **ui** app using the environment you want
 - Run `yarn start:[ENVIRONMENT_NAME]` to launch all the apps
 - **SIDE NOTES**:
   - Please try to mantain all the environemnt variables available in each environment
@@ -98,7 +97,7 @@ The UI library is optional so you can keep it or remove it according the project
 - All the **css variables** that define the global theme should be written inside the UI library
 - If you choose to remove the UI library please remove all the references inside the **client** app
   - remove `apps/uilib` folder
-  - remove all scripts that end with `:ui` in the package.json of the project (also the references inside other scripts)
+  - remove all scripts that end with `:ui` and `:ui:*` in the package.json of the project (also the references inside other scripts)
   - remove inside `apps/client` of `@floact/uilib`
 
 <div id="server"></div>
