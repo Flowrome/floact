@@ -19,7 +19,7 @@
     "start:ui:prod": "cd apps/uilib && ENV=production npm run start",
     "build": "concurrently -n \"client\" -c \"#CC5A71\" \"yarn build:client\"",
     "build:client": "yarn build:ui && rm -rf apps/client/.next && cd apps/client && npm run build",
-    "build:ui": "cd apps/uilib && npm run build && cd ../.. && yarn remove uilib && yarn add file:./apps/uilib",
+    "build:ui": "cd apps/uilib && npm run build",
     "init": "yarn && concurrently -n \"client,server,uilib\" -c \"#CC5A71,#3F84E5,#22AAA1\" \"yarn init:client\" \"yarn init:server\" \"yarn init:ui\"",
     "init:client": "cd apps/client && yarn",
     "init:ui": "cd apps/uilib && yarn && yarn link && cd ../.. && yarn link uilib",
