@@ -48,7 +48,7 @@ This library is a monorepo template to create web-app application using this sta
 - Replace the following placeholders with your application name in the project folder (use CMD/CTRL + SHIFT + F as a find shortcuts in **VSCode**):
   - **FLOACT** -> **APPLICATION NAME IN UPPERCASE**
   - **floact** -> **application name in lowercase (use only alphacharacter)**
-- Run `npm init` in the project root folder to install all the dependencies needed
+- Run `npm run init` in the project root folder to install all the dependencies needed
 
 <div id="how-to-start-local-environemt"></div>
 
