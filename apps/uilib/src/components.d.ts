@@ -6,34 +6,34 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface HelloWorld {
+    interface DocReadme {
         "apiTestString": string;
     }
 }
 declare global {
-    interface HTMLHelloWorldElement extends Components.HelloWorld, HTMLStencilElement {
+    interface HTMLDocReadmeElement extends Components.DocReadme, HTMLStencilElement {
     }
-    var HTMLHelloWorldElement: {
-        prototype: HTMLHelloWorldElement;
-        new (): HTMLHelloWorldElement;
+    var HTMLDocReadmeElement: {
+        prototype: HTMLDocReadmeElement;
+        new (): HTMLDocReadmeElement;
     };
     interface HTMLElementTagNameMap {
-        "hello-world": HTMLHelloWorldElement;
+        "doc-readme": HTMLDocReadmeElement;
     }
 }
 declare namespace LocalJSX {
-    interface HelloWorld {
+    interface DocReadme {
         "apiTestString"?: string;
     }
     interface IntrinsicElements {
-        "hello-world": HelloWorld;
+        "doc-readme": DocReadme;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "hello-world": LocalJSX.HelloWorld & JSXBase.HTMLAttributes<HTMLHelloWorldElement>;
+            "doc-readme": LocalJSX.DocReadme & JSXBase.HTMLAttributes<HTMLDocReadmeElement>;
         }
     }
 }
