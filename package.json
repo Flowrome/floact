@@ -20,9 +20,9 @@
     "build": "concurrently -n \"client\" -c \"#CC5A71\" \"yarn build:client\"",
     "build:client": "yarn build:ui && rm -rf apps/client/.next && cd apps/client && npm run build",
     "build:ui": "cd apps/uilib && npm run build && cd ../.. && yarn remove uilib && yarn add file:./apps/uilib",
-    "init": "npm i && concurrently -n \"client,server,uilib\" -c \"#CC5A71,#3F84E5,#22AAA1\" \"yarn init:client\" \"yarn init:server\" \"yarn init:ui\"",
-    "init:client": "cd apps/client && npm i",
-    "init:ui": "cd apps/uilib && npm i",
+    "init": "yarn && concurrently -n \"client,server,uilib\" -c \"#CC5A71,#3F84E5,#22AAA1\" \"yarn init:client\" \"yarn init:server\" \"yarn init:ui\"",
+    "init:client": "cd apps/client && yarn",
+    "init:ui": "cd apps/uilib && yarn",
     "init:server": "python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt"
   },
   "devDependencies": {
