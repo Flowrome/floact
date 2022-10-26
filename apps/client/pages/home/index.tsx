@@ -2,7 +2,7 @@ import "./home.module.scss";
 import type { NextPageWithLayout } from "@app";
 import BasePageLayout from "@layouts/BasePage";
 import { ReactElement } from "react";
-import { HelloWorld } from "@floact/uilib";
+import { DocReadme } from "@floact/uilib";
 
 interface HomeInterface {
   data: { [key: string]: any };
@@ -22,7 +22,7 @@ export const getServerSideProps = async () => {
 const Home: NextPageWithLayout<HomeInterface> = ({data}) => {
   return (
     <>
-      <HelloWorld apiTestString={data.helloWorld}></HelloWorld>
+      <DocReadme apiTestString={data.helloWorld}></DocReadme>
     </>
   );
 };

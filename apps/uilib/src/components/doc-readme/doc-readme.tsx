@@ -192,8 +192,12 @@ export class DocReadme {
                   will start the <strong>client</strong> app using the environment you want
                 </li>
                 <li>
-                  <code>&quot;start:server:[ENVIRONMENT_NAME]&quot;: &quot;cd apps/server &amp;&amp; ENV=[ENVIRONMENT_NAME] gunicorn --bind=0.0.0.0:3001 wsgi:app&quot; </code>will
+                  <code>&quot;start:server:[ENVIRONMENT_NAME]&quot;: &quot;cd apps/server &amp;&amp; ENV=[ENVIRONMENT_NAME] gunicorn --bind=0.0.0.0:3001 wsgi:app&quot;</code>will
                   start the <strong>server</strong> app using the environment you want
+                </li>
+                <li>
+                  <code>&quot;storybook:[ENVIRONMENT_NAME]&quot;: &quot;cd apps/uilib &amp;&amp; ENV=[ENVIRONMENT_NAME] yarn run start:storybook</code>will start the{' '}
+                  <strong>server</strong> app using the environment you want
                 </li>
               </ul>
             </li>
