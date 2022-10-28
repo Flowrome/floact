@@ -18,7 +18,7 @@
     "storybook:dev": "cd apps/uilib && ENV=development yarn run start:storybook",
     "storybook:prod": "cd apps/uilib && ENV=production yarn run start:storybook",
     "build": "concurrently -n \"client\" -c \"#CC5A71\" \"yarn build:client\"",
-    "build:docker": "docker-compose up --build",
+    "build:docker": "docker-compose up --build --force-recreate",
     "build:client": "yarn build:ui && rm -rf apps/client/.next && cd apps/client && yarn run build",
     "build:ui": "cd apps/uilib && yarn run build",
     "build:ui:watch": "cd apps/uilib && yarn run build:watch",
@@ -59,6 +59,9 @@
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",
     "puppeteer": "^10.0.0"
+  },
+  "resolutions": {
+    "@types/react": "18.0.21"
   },
   "dependencies": {}
 }
