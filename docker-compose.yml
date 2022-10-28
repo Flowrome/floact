@@ -5,7 +5,7 @@ services:
     container_name: floact_client
     build:
       context: .
-      dockerfile: dockerfiles/client.dockerfile 
+      dockerfile: dockerfiles/client.Dockerfile 
     ports:
       - '3004:3004'
     env_file:
