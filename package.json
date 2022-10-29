@@ -18,14 +18,15 @@
     "storybook:dev": "cd apps/uilib && ENV=development yarn run start:storybook",
     "storybook:prod": "cd apps/uilib && ENV=production yarn run start:storybook",
     "build": "concurrently -n \"client\" -c \"#CC5A71\" \"yarn build:client\"",
-    "build:docker": "docker-compose up --build --force-recreate",
     "build:client": "yarn build:ui && rm -rf apps/client/.next && cd apps/client && yarn run build",
     "build:ui": "cd apps/uilib && yarn run build",
     "build:ui:watch": "cd apps/uilib && yarn run build:watch",
     "init": "yarn && concurrently -n \"client,server,uilib\" -c \"#CC5A71,#3F84E5,#22AAA1\" \"yarn init:client\" \"yarn init:server\" \"yarn init:ui\"",
     "init:client": "cd apps/client && yarn",
     "init:ui": "cd apps/uilib && yarn && yarn link && cd ../.. && yarn link uilib",
-    "init:server": "python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt"
+    "init:server": "python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt",
+    "docker:init:client": "yarn && concurrently -n \"client,uilib\" -c \"#CC5A71,#22AAA1\" \"yarn init:client\" \"yarn init:ui\"",
+    "docker:build:client": "docker-compose up --build -d --force-recreate"
   },
   "devDependencies": {
     "@stencil-community/postcss": "^2.1.0",

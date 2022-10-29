@@ -5,6 +5,7 @@ require("dotenv").config({
 });
 
 const nextConfig = {
+  output: 'standalone',
   reactStrictMode: true,
   swcMinify: true,
   async redirects() {
