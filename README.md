@@ -34,6 +34,8 @@ This library is a monorepo template to create web-app application using this sta
 - [External libraries](#external-libraries)
 - [UI library](#ui-library)
 - [Server](#server)
+- [Deploy](#deploy)
+  - [With docker compose](#with-docker-compose)
 
 <div id="requirements"></div>
 
@@ -117,3 +119,14 @@ You can check the file `apps/server/apis/home.py` for a `hello world` example on
 Here's the example (Only visible in localhost):
 
 **[{this.apiTestString}](http://localhost:3001/api/home/)**
+
+# Deploy
+
+## With docker compose
+
+It's possible to use this script inside the `package.json` to deploy directly the client and the server in production mode (if you want to switch environment just change the `env_file` pointer inside the `docker-compose.yml` file)
+
+- run `yarn docker:build:client`
+  - This will build the `apps/client` app with the `apps/uilib` component library inside
+- run `yarn docker:build:server`
+  - This will build the `apps/server` and serve it using **[gunicorn](https://gunicorn.org/)**

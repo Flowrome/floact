@@ -1,6 +1,12 @@
 # Install dependencies only when needed
 FROM node:16-alpine AS builder
 
+ARG FLOACT_NODE_ENV
+ARG FLOACT_NEXT_TELEMETRY_DISABLED
+
+ENV NODE_ENV=${FLOACT_NODE_ENV}
+ENV NEXT_TELEMETRY_DISABLED=${FLOACT_NEXT_TELEMETRY_DISABLED}
+
 RUN apk add --no-cache --update libc6-compat
 
 WORKDIR /
@@ -23,6 +29,13 @@ RUN yarn run docker:init:client
 RUN yarn run build:client
 
 FROM node:16-alpine AS runner
+
+ARG FLOACT_ENV
+ARG FLOACT_NEXT_TELEMETRY_DISABLED
+
+ENV NODE_ENV=${FLOACT_ENV}
+ENV NEXT_TELEMETRY_DISABLED=${FLOACT_NEXT_TELEMETRY_DISABLED}
+
 WORKDIR /app
 
 RUN addgroup --system --gid 1001 nodejs
@@ -42,8 +55,10 @@ WORKDIR /app
 
 USER nextjs
 
-EXPOSE 3004
+ARG FLOACT_CLIENT_PORT
 
-ENV PORT 3004
+EXPOSE ${FLOACT_CLIENT_PORT}
+
+ENV PORT=${FLOACT_CLIENT_PORT}
 
 CMD ["node", "server.js"]

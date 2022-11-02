@@ -30,7 +30,7 @@ export const getServerSideProps = async () => {
 const Home: NextPageWithLayout<HomeInterface> = ({ data }) => {
   return (
     <>
-      <DocReadme apiTestString={data.helloWorld}></DocReadme>
+      <DocReadme apiTestString={data?.helloWorld}></DocReadme>
     </>
   );
 };

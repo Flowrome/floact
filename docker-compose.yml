@@ -11,3 +11,14 @@ services:
       - '3004:3004'
     env_file:
       - envs/.env.production
+  # server:
+  #   tty: true
+  #   platform: linux/amd64
+  #   container_name: floact_server
+  #   build:
+  #     context: .
+  #     dockerfile: dockerfiles/server.Dockerfile 
+  #   ports:
+  #     - '3005:3005'
+  #   env_file:
+  #     - envs/.env.production
