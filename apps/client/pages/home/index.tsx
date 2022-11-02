@@ -27,10 +27,10 @@ export const getServerSideProps = async () => {
   }
 };
 
-const Home: NextPageWithLayout<HomeInterface> = () => {
+const Home: NextPageWithLayout<HomeInterface> = ({ data }) => {
   return (
     <>
-      <DocReadme apiTestString={"romeo-test"}></DocReadme>
+      <DocReadme apiTestString={data.helloWorld}></DocReadme>
     </>
   );
 };

@@ -22,22 +22,19 @@ RUN rm -rf apps/uilib/node_modules
 RUN yarn run docker:init:client
 RUN yarn run build:client
 
-ENV NEXT_TELEMETRY_DISABLED 1
+FROM node:16-alpine AS runner
+WORKDIR /app
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-WORKDIR /
 
-RUN mkdir /app
-RUN mkdir /app/public
-RUN mkdir /app/.next
-RUN mkdir /app/.next/static
-RUN cp -R monorepo/apps/client/public/* /app/public
-RUN cp -R monorepo/apps/client/.next/standalone/* /app
-RUN cp -R monorepo/apps/client/.next/static/* /app/.next/static
-RUN chown nextjs:nodejs /app
-RUN chown nextjs:nodejs /app/.next/static
+COPY --from=builder /monorepo/apps/client/public ./public
+
+COPY --from=builder --chown=nextjs:nodejs /monorepo/apps/client/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /monorepo/apps/client/.next/static ./.next/static
+
+WORKDIR /
 
 RUN rm -rf /monorepo
 
