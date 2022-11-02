@@ -6,19 +6,26 @@ services:
     container_name: floact_client
     build:
       context: .
-      dockerfile: dockerfiles/client.Dockerfile 
+      dockerfile: dockerfiles/client.Dockerfile
+      args:
+        - FLOACT_ENV=$FLOACT_ENV
+        - FLOACT_NEXT_TELEMETRY_DISABLED=$FLOACT_NEXT_TELEMETRY_DISABLED
+        - FLOACT_CLIENT_PORT=$FLOACT_CLIENT_PORT
     ports:
-      - '3004:3004'
+      - 3004:3004
+    env_file: envs/.env.production
+  server:
+    tty: true
+    platform: linux/amd64
+    container_name: floact_server
+    build:
+      context: .
+      dockerfile: dockerfiles/server.Dockerfile 
+      args:
+        - FLOACT_ENV=$FLOACT_ENV
+        - FLOACT_SERVER_FLASK_PORT=$FLOACT_SERVER_FLASK_PORT
+        - FLOACT_SERVER_FLASK_HOST=$FLOACT_SERVER_FLASK_HOST
+    ports:
+      - '3005:3005'
     env_file:
       - envs/.env.production
-  # server:
-  #   tty: true
-  #   platform: linux/amd64
-  #   container_name: floact_server
-  #   build:
-  #     context: .
-  #     dockerfile: dockerfiles/server.Dockerfile 
-  #   ports:
-  #     - '3005:3005'
-  #   env_file:
-  #     - envs/.env.production

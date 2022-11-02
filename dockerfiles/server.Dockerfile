@@ -5,19 +5,22 @@ WORKDIR /
 
 COPY ./apps/server /server/app
 
-COPY ./apps/requirements.txt /server/requirements.txt
+COPY ./requirements.txt /server/requirements.txt
 
 WORKDIR /server
 
-RUN python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt
+RUN python3 -m venv venv
+RUN source venv/bin/activate
+RUN pip install -r requirements.txt
 
 WORKDIR /server/app
 
 ARG FLOACT_ENV
 ARG FLOACT_SERVER_FLASK_PORT
+ARG FLOACT_SERVER_FLASK_HOST
 
-ENV ENV=${FLOACT_ENV}
+ENV ENV ${FLOACT_ENV}
 
 EXPOSE ${FLOACT_SERVER_FLASK_PORT}
 
-CMD [ "gunicorn", "--bind=0.0.0.0:${FLOACT_SERVER_FLASK_PORT}",  "wsgi:app" ]
+CMD gunicorn --bind=${FLOACT_SERVER_FLASK_HOST}:${FLOACT_SERVER_FLASK_PORT} wsgi:app
