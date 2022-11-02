@@ -50,4 +50,3 @@ EXPOSE 3004
 ENV PORT 3004
 
 CMD ["node", "server.js"]
-# CMD ["ls", "-alR"]

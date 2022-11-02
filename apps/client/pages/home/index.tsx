@@ -9,20 +9,28 @@ interface HomeInterface {
 }
 
 export const getServerSideProps = async () => {
-  const { data } = await fetch(
-    `${process.env.FLOACT_CLIENT_BASE_URL}/home`
-  ).then((res) => res.json());
-  return {
-    props: {
-      data,
-    },
-  };
+  try {
+    const { data } = await fetch(
+      `${process.env.FLOACT_CLIENT_BASE_URL}/home`
+    ).then((res) => res.json());
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (err) {
+    return {
+      props: {
+        data: null,
+      },
+    };
+  }
 };
 
-const Home: NextPageWithLayout<HomeInterface> = ({data}) => {
+const Home: NextPageWithLayout<HomeInterface> = () => {
   return (
     <>
-      <DocReadme apiTestString={data.helloWorld}></DocReadme>
+      <DocReadme apiTestString={"romeo-test"}></DocReadme>
     </>
   );
 };
