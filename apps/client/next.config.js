@@ -5,7 +5,7 @@ require("dotenv").config({
 });
 
 const nextConfig = {
-  output: 'standalone',
+  output: "standalone",
   reactStrictMode: true,
   swcMinify: true,
   async redirects() {
@@ -16,7 +16,7 @@ const nextConfig = {
         permanent: true,
       },
     ];
-  },
+  }
 };
 
 module.exports = nextConfig;

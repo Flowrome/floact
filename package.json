@@ -26,7 +26,7 @@
     "init:ui": "cd apps/uilib && yarn && yarn link && cd ../.. && yarn link uilib",
     "init:server": "python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt",
     "docker:init:client": "yarn && concurrently -n \"client,uilib\" -c \"#CC5A71,#22AAA1\" \"yarn init:client\" \"yarn init:ui\"",
-    "docker:build:deploy": "cp envs/.env.production .env && docker-compose up --build -d --force-recreate && rm .env"
+    "docker:build:deploy": "cp envs/.env.production.docker .env && docker-compose up --build -d --force-recreate && rm .env"
   },
   "devDependencies": {
     "@stencil-community/postcss": "^2.1.0",

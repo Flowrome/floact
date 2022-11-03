@@ -1,7 +1,7 @@
 import "./home.module.scss";
 import type { NextPageWithLayout } from "@app";
 import BasePageLayout from "@layouts/BasePage";
-import { ReactElement } from "react";
+import { ReactElement, useEffect } from "react";
 import { DocReadme } from "@floact/uilib";
 
 interface HomeInterface {
@@ -28,6 +28,9 @@ export const getServerSideProps = async () => {
 };
 
 const Home: NextPageWithLayout<HomeInterface> = ({ data }) => {
+  useEffect(() => {
+    console.log(process.env, process)
+  }, []);
   return (
     <>
       <DocReadme apiTestString={data?.helloWorld}></DocReadme>
