@@ -23,7 +23,7 @@
     "build:ui:watch": "cd apps/uilib && yarn run build:watch",
     "init": "yarn && concurrently -n \"client,server,uilib\" -c \"#CC5A71,#3F84E5,#22AAA1\" \"yarn init:client\" \"yarn init:server\" \"yarn init:ui\"",
     "init:client": "cd apps/client && yarn",
-    "init:ui": "cd apps/uilib && yarn && yarn link && cd ../.. && yarn link uilib",
+    "init:ui": "cd apps/uilib && yarn",
     "init:server": "python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt",
     "docker:init:client": "yarn && concurrently -n \"client,uilib\" -c \"#CC5A71,#22AAA1\" \"yarn init:client\" \"yarn init:ui\"",
     "docker:build:deploy": "cp envs/.env.docker .env && docker-compose up --build -d --force-recreate && rm .env"
