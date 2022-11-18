@@ -10,6 +10,7 @@ ENV NEXT_TELEMETRY_DISABLED=$FLOACT_NEXT_TELEMETRY_DISABLED
 RUN echo $FLOACT_NODE_ENV && echo $FLOACT_NEXT_TELEMETRY_DISABLED
 
 RUN apk add --no-cache --update libc6-compat
+RUN apk add --no-cache  chromium --repository=http://dl-cdn.alpinelinux.org/alpine/edge/main/
 
 WORKDIR /
 
